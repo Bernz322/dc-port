@@ -11,11 +11,11 @@ import { SplashScreen } from "./pages";
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
-  }, [isLoaded]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoaded(true);
+  //   }, 3000);
+  // }, [isLoaded]);
 
   return (
     <BrowserRouter>

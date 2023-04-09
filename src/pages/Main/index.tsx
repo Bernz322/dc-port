@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import {
   MeshDistortMaterial,
   OrbitControls,
-  Stage,
   Sphere,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
