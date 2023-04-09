@@ -53,6 +53,10 @@ const GlobalStyles = createGlobalStyle<ThemeProps>`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden !important;
+
+        @media only screen and (max-width: 768px) {
+            height: fit-content;
+        }
     }
 
     a{

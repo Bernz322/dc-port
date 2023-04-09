@@ -24,6 +24,30 @@ const StyledLetters = styled(motion.svg)`
   width: 900px;
   height: 800px;
   margin-left: 150px;
+
+  @media only screen and (max-width: 900px) {
+    margin-left: 250px;
+  }
+  @media only screen and (max-width: 800px) {
+    margin-left: 200px;
+  }
+  @media only screen and (max-width: 750px) {
+    width: 500px;
+    height: 400px;
+    margin-left: 200px;
+  }
+  @media only screen and (max-width: 700px) {
+    margin-left: 170px;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-left: 130px;
+  }
+  @media only screen and (max-width: 500px) {
+    margin-left: 80px;
+  }
+  @media only screen and (max-width: 350px) {
+    margin-left: 50px;
+  }
 `;
 
 const svgVariants = {

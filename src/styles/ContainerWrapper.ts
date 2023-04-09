@@ -6,5 +6,9 @@ const ContainerWrapper = styled(motion.div)`
   padding: 0 70px;
   max-width: var(--site-max-width);
   height: calc(100vh - 185px);
+
+  @media only screen and (max-width: 900px) {
+    height: fit-content;
+  }
 `;
 export default ContainerWrapper;

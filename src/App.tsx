@@ -9,13 +9,13 @@ import { GlobalStyles, FlexWrapper } from "./styles";
 import { SplashScreen } from "./pages";
 
 const App = () => {
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoaded(true);
-  //   }, 2500);
-  // }, [isLoaded]);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 2500);
+  }, [isLoaded]);
 
   return (
     <BrowserRouter>

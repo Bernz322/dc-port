@@ -10,7 +10,7 @@ const StyledMain = styled(motion.section)`
     justify-content: center;
     margin-top: 5px;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 900px) {
       flex-direction: column;
     }
 
