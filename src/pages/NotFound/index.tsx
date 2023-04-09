@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ContainerWrapper from "../ContainerWrapper";
+import { ContainerWrapper } from "../../styles";
 import StyledPage404 from "./notFoundStyles";
 import { Button } from "../../components";
 
@@ -22,7 +22,7 @@ const NotFound = () => {
         <h1>404</h1>
         <h3>Not sure what you're trying to find.</h3>
         <p>
-          You will be redirected to the homepage in {" "}
+          You will be redirected to the homepage in{" "}
           <span className="sec">{redirect}</span>
           s.
         </p>

@@ -11,9 +11,13 @@ const StyledNav = styled(motion.header)`
   left: 0;
   right: 0;
   backdrop-filter: blur(50px);
-  /* transition: var(--transition1); */
   max-width: var(--site-max-width);
   width: 100%;
+
+  h1{
+    color: ${({ theme }) => theme.color4};
+    font-size: 1.6rem;
+  }
 
   @media only screen and (max-width: 768px) {
     padding: 0 25px;

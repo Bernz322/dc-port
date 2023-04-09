@@ -8,7 +8,7 @@
   font-family: "Dancing Script";
   src: url("../../public/fonts/DancingScript-Medium.ttf") format("woff");
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
 }
 @font-face {
   font-family: "Dancing Script";
