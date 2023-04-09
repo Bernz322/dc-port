@@ -7,7 +7,7 @@
 </p>
 <div align="center">
   Go to 
-    <a href="https://celestial.vercel.app" target="_blank" rel='noreferrer'> link</a>.
+    <a href="https://celestial6000.vercel.app" target="_blank" rel='noreferrer'> link</a>.
 </div>
 
 <p align="center">
