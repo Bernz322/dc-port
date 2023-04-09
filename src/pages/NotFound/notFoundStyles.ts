@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const StyledPage404 = styled.div`
-  height: calc(100vh - 100px);
+const StyledPage404 = styled(motion.div)`
+  height: calc(100vh - 185px);
   display: flex;
   align-content: center;
   margin-top: 50px;

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { ContainerWrapper } from "../../styles";
 import StyledPage404 from "./notFoundStyles";
 import { Button } from "../../components";
+import { fadeUp, variants } from "../../utils/animations";
+import { motion } from "framer-motion";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -18,17 +20,19 @@ const NotFound = () => {
   }, [redirect, navigate]);
   return (
     <ContainerWrapper>
-      <StyledPage404>
-        <h1>404</h1>
-        <h3>Not sure what you're trying to find.</h3>
-        <p>
+      <StyledPage404 variants={variants} initial="hidden" animate="visible">
+        <motion.h1 variants={fadeUp}>404</motion.h1>
+        <motion.h3 variants={fadeUp}>
+          Not sure what you're trying to find.
+        </motion.h3>
+        <motion.p variants={fadeUp}>
           You will be redirected to the homepage in{" "}
           <span className="sec">{redirect}</span>
           s.
-        </p>
-        <div className="btn">
+        </motion.p>
+        <motion.div className="btn" variants={fadeUp}>
           <Button buttonText="Go Home" buttonUrl="/" ariaLabel="Go home" />
-        </div>
+        </motion.div>
       </StyledPage404>
     </ContainerWrapper>
   );

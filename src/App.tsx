@@ -3,18 +3,18 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ThemeModeProvider } from "./context/ThemeContext";
-import { Cursor, Navbar } from "./components";
+import { Cursor, Footer, Navbar } from "./components";
 import Routing from "./routes";
 import { GlobalStyles, FlexWrapper } from "./styles";
 import { SplashScreen } from "./pages";
 
 const App = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   // useEffect(() => {
   //   setTimeout(() => {
   //     setIsLoaded(true);
-  //   }, 3000);
+  //   }, 2500);
   // }, [isLoaded]);
 
   return (
@@ -40,6 +40,7 @@ const App = () => {
               <>
                 <Navbar />
                 <Routing />
+                <Footer />
               </>
             )}
           </AnimatePresence>

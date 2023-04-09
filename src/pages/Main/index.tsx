@@ -1,63 +1,101 @@
-import React, { useContext } from "react";
-import {
-  MeshDistortMaterial,
-  OrbitControls,
-  Sphere,
-} from "@react-three/drei";
+import React from "react";
+import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { ThemeModeContext } from "../../context/ThemeContext";
 import { ContainerWrapper } from "../../styles";
 import StyledMain from "./mainStyles";
+import StyledTechStack from "./techStackStyles";
+import { socialLinks, techs } from "./data";
+import { variants, fadeUp, popUpFast } from "../../utils/animations";
 
 const Main = () => {
-  const { theme } = useContext(ThemeModeContext);
-  const variants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 1,
-        staggerChildren: 0.3,
-        when: "beforeChildren",
-      },
-    },
-  };
-  const fadeUp = {
-    hidden: {
-      y: 20,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
   return (
     <ContainerWrapper>
       <StyledMain variants={variants} initial="hidden" animate="visible">
-        <motion.div variants={fadeUp}>
-          <Canvas className="moon-container">
-            <OrbitControls enableZoom={false} autoRotate />
-            <ambientLight intensity={1} />
-            <directionalLight position={[3, 2, 1]} />
-            {/**@ts-ignore */}
-            <Sphere args={[1.4, 100, 200]} scale={1.9}>
-              <MeshDistortMaterial
-                attach="material"
-                distort={0.5}
-                speed={2}
-                color={theme === "dark" ? "#79f6fc" : "#003152"}
-              />
-            </Sphere>
-          </Canvas>
-        </motion.div>
+        <div className="main-content">
+          <motion.div className="left">
+            <motion.h3 className="section-head" variants={fadeUp}>
+              Hi
+              <span>.</span>
+            </motion.h3>
+            <motion.div className="details">
+              <motion.h4 className="sub-head" variants={fadeUp}>
+                I am Celestial
+              </motion.h4>
+              <motion.p className="desc" variants={fadeUp}>
+                Your noob and average fullstack developer with less than a year
+                of experience. I enjoy building web apps from scratch and put
+                them on the web.
+              </motion.p>
+              <motion.p className="desc" variants={fadeUp}>
+                I primarily build & scale applications using these bad boys:
+              </motion.p>
+              <StyledTechStack>
+                {techs.map(({ name, Icon }) => (
+                  <motion.li
+                    key={name}
+                    variants={popUpFast}
+                    drag
+                    dragConstraints={{
+                      left: 0,
+                      right: 0,
+                      top: 0,
+                      bottom: 0,
+                    }}
+                  >
+                    <div className="tech-content">
+                      <Icon />
+                      <p>{name}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </StyledTechStack>
+            </motion.div>
+          </motion.div>
+          <div className="right">
+            <motion.div className="top" variants={fadeUp}>
+              <Canvas style={{ backgroundColor: "#001429" }}>
+                <OrbitControls autoRotate />
+                <Stars />
+                <ambientLight intensity={1} />
+                <directionalLight position={[3, 2, 1]} />
+                {/**@ts-ignore */}
+                <Sphere scale={1} />
+              </Canvas>
+            </motion.div>
+            <div className="bottom">
+              <motion.h4 className="sub-head" variants={fadeUp}>
+                Find me here
+                <span>.</span>
+              </motion.h4>
+              <ul>
+                {socialLinks.map((social) => {
+                  const { name, url, Icon } = social;
+                  return (
+                    <motion.li key={name} variants={fadeUp}>
+                      <motion.a
+                        drag
+                        dragConstraints={{
+                          left: 0,
+                          right: 0,
+                          top: 0,
+                          bottom: 0,
+                        }}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon className="side-icons" />
+                      </motion.a>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
       </StyledMain>
     </ContainerWrapper>
   );
