@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export type ThemeMode = "light" | "dark";
 
 export const useDarkMode = () => {
-  const [theme, setTheme] = useState<ThemeMode>("light");
+  const [theme, setTheme] = useState<ThemeMode>("dark");
 
   //   Setting theme mode, if no theme mode, useEffect will set it to light
   const setMode = (mode: ThemeMode) => {
@@ -28,7 +28,7 @@ export const useDarkMode = () => {
     if (currentTheme) {
       setTheme(currentTheme);
     } else {
-      setTheme("light");
+      setTheme("dark");
     }
   }, []);
 
