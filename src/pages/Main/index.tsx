@@ -1,5 +1,10 @@
 import React from "react";
-import { OrbitControls, Stage } from "@react-three/drei";
+import {
+  MeshDistortMaterial,
+  OrbitControls,
+  Stage,
+  Sphere,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import { Moon } from "../../components";
@@ -39,10 +44,21 @@ const Main = () => {
       <StyledMain variants={variants} initial="hidden" animate="visible">
         <motion.div variants={fadeUp}>
           <Canvas className="moon-container">
-            <Stage environment="city" intensity={0.6}>
+            {/* <Stage environment="city" intensity={0.6}>
               <Moon />
-            </Stage>
+            </Stage> */}
             <OrbitControls enableZoom={false} autoRotate />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            {/**@ts-ignore */}
+            <Sphere args={[1.4, 100, 200]} scale={1.9}>
+              <MeshDistortMaterial
+                attach="material"
+                distort={0.5}
+                speed={2}
+                color="#79f6fc"
+              />
+            </Sphere>
           </Canvas>
         </motion.div>
       </StyledMain>
