@@ -17,8 +17,7 @@ const variables = css`
       sans-serif;
     --font-mono: "Fira Mono", Roboto Mono, Oxygen Mono, Ubuntu Mono, Cantarell,
       monospace;
-    --font-cursive: "Dancing Script",
-      monospace;
+    --font-cursive: 'Dancing Script', cursive;
 
     --fz-xxs: 12px;
     --fz-xs: 13px;
