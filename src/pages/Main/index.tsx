@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
@@ -31,6 +31,13 @@ const Main = () => {
       pauseAudio();
     }
   };
+
+  useEffect(() => {
+    if (audio.current) {
+      /*@ts-ignore*/
+      audio.current.volume = 0.2;
+    }
+  }, []);
 
   return (
     <ContainerWrapper>
