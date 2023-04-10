@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
+import AudioVisualizer from "@tiagotrindade/audio-visualizer";
 import { ContainerWrapper } from "../../styles";
 import StyledMain from "./mainStyles";
 import StyledTechStack from "./techStackStyles";
 import { socialLinks, techs } from "./data";
 import { variants, fadeUp, popUpFast } from "../../utils/animations";
+import sound from "../../../public/a-world-at-peace-ibrahim.mp3";
 
 const Main = () => {
+  const audio = useRef(null);
+
+  const startAudio = () => {
+    /*@ts-ignore*/
+    audio?.current?.play();
+  };
+
+  const pauseAudio = () => {
+    /*@ts-ignore*/
+    audio?.current?.pause();
+  };
+
+  const playerHandler = () => {
+    /*@ts-ignore*/
+    if (audio?.current?.paused) {
+      startAudio();
+    } else {
+      pauseAudio();
+    }
+  };
+
   return (
     <ContainerWrapper>
       <StyledMain variants={variants} initial="hidden" animate="visible">
@@ -95,6 +118,22 @@ const Main = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="song">
+          <motion.div className="visualizer" variants={fadeUp}>
+            <audio ref={audio} src={sound} autoPlay loop />
+            <AudioVisualizer
+              audio={audio}
+              amplitude={0.5}
+              onClick={playerHandler}
+            />
+          </motion.div>
+          <motion.p variants={fadeUp}>
+            a world at peace by{" "}
+            <a href="https://soundcloud.com/ibr" target="_blank">
+              ibrahim
+            </a>
+          </motion.p>
         </div>
       </StyledMain>
     </ContainerWrapper>

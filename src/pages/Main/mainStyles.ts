@@ -86,6 +86,38 @@ const StyledMain = styled(motion.section)`
       }
     }
   }
+
+  .song {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    p {
+      font-size: var(--fz-sm);
+      color: ${(props) => props.theme.color3};
+      a {
+        color: ${(props) => props.theme.btn};
+      }
+      @media only screen and (max-width: 768px) {
+        font-size: var(--fz-xxs);
+      }
+    }
+    .visualizer {
+      max-height: 75px !important;
+      width: 500px !important;
+      canvas {
+        max-height: 75px !important;
+        width: 500px !important;
+      }
+      @media only screen and (max-width: 580px) {
+        width: 300px !important;
+        canvas {
+          width: 300px !important;
+        }
+      }
+    }
+  }
 `;
 
 export default StyledMain;

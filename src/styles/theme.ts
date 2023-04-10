@@ -1,5 +1,5 @@
 export const lightTheme: any = {
-  body: "#e3ebec",
+  body: "#d2d7dc",
   color1: "#001429",
   color2: "#003152",
   color3: "#738b9c",

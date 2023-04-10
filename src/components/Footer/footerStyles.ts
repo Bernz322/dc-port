@@ -12,10 +12,11 @@ const StyledFooter = styled(motion.footer)`
   font-family: var(--font-mono);
   color: ${(props) => props.theme.color3};
   padding: 20px 0 10px;
+  margin-top: 15px;
 
   .footer-msg {
     color: ${(props) => props.theme.color3};
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: var(--transition2);
     :hover {
       color: ${(props) => props.theme.hover};
