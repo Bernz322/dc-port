@@ -1,26 +1,33 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import AudioVisualizer from "@tiagotrindade/audio-visualizer";
-import { ContainerWrapper } from "../../styles";
+import { ContainerWrapper, FlexWrapper } from "../../styles";
 import StyledMain from "./mainStyles";
 import StyledTechStack from "./techStackStyles";
 import { socialLinks, techs } from "./data";
 import { variants, fadeUp, popUpFast } from "../../utils/animations";
 import sound from "../../../public/a-world-at-peace-ibrahim.mp3";
+import { Button } from "../../components";
 
 const Main = () => {
   const audio = useRef(null);
+  const [play, setPlay] = useState(false);
 
   const startAudio = () => {
-    /*@ts-ignore*/
-    audio?.current?.play();
+    if (audio.current) {
+      /*@ts-ignore*/
+      audio?.current?.play();
+      setPlay(true);
+    }
   };
 
   const pauseAudio = () => {
-    /*@ts-ignore*/
-    audio?.current?.pause();
+    if (audio.current) {
+      /*@ts-ignore*/
+      audio?.current?.pause();
+    }
   };
 
   const playerHandler = () => {
@@ -128,19 +135,28 @@ const Main = () => {
         </div>
         <div className="song">
           <motion.div className="visualizer" variants={fadeUp}>
-            <audio ref={audio} src={sound} autoPlay loop />
-            <AudioVisualizer
-              audio={audio}
-              amplitude={0.5}
-              onClick={playerHandler}
-            />
+            {/*@ts-ignore*/}
+            <audio ref={audio} src={sound} loop />
+            {!play ? (
+              <FlexWrapper>
+                <Button buttonText="Play Audio" onClick={startAudio} />
+              </FlexWrapper>
+            ) : (
+              <AudioVisualizer
+                audio={audio}
+                amplitude={0.5}
+                onClick={playerHandler}
+              />
+            )}
           </motion.div>
-          <motion.p variants={fadeUp}>
-            a world at peace by{" "}
-            <a href="https://soundcloud.com/ibr" target="_blank">
-              ibrahim
-            </a>
-          </motion.p>
+          {play && (
+            <motion.p variants={fadeUp}>
+              a world at peace by{" "}
+              <a href="https://soundcloud.com/ibr" target="_blank">
+                ibrahim
+              </a>
+            </motion.p>
+          )}
         </div>
       </StyledMain>
     </ContainerWrapper>
