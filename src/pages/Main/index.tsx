@@ -60,9 +60,9 @@ const Main = () => {
                 I am Celestial
               </motion.h4>
               <motion.p className="desc" variants={fadeUp}>
-                Your noob and average fullstack developer with less than a year
-                of experience. I enjoy building web apps from scratch and put
-                them on the web.
+                Not your average fullstack developer. I enjoy building web apps
+                from scratch and put them on the web. I am currently upskilling
+                with Flutter, React Native, Three.js, & Next.js.
               </motion.p>
               <motion.p className="desc" variants={fadeUp}>
                 I primarily build & scale applications using these bad boys:
