@@ -116,11 +116,6 @@ export const techs = [
 
 export const socialLinks = [
   {
-    name: "Instagram",
-    url: "https://www.instagram.com/brnzzzzzzz/",
-    Icon: FiInstagram,
-  },
-  {
     name: "Steam",
     url: "https://steamcommunity.com/id/celestial6000/",
     Icon: FaSteam,
