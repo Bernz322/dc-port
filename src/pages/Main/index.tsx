@@ -3,7 +3,7 @@ import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import AudioVisualizer from "@tiagotrindade/audio-visualizer";
-import { ContainerWrapper, FlexWrapper } from "../../styles";
+import { ContainerWrapper } from "../../styles";
 import StyledMain from "./mainStyles";
 import StyledTechStack from "./techStackStyles";
 import { socialLinks, techs } from "./data";
@@ -61,8 +61,7 @@ const Main = () => {
               </motion.h4>
               <motion.p className="desc" variants={fadeUp}>
                 Not your average fullstack developer. I enjoy building web apps
-                from scratch and put them on the web. I am currently upskilling
-                with Flutter, React Native, Three.js, & Next.js.
+                from scratch and put them on the web. 
               </motion.p>
               <motion.p className="desc" variants={fadeUp}>
                 I primarily build & scale applications using these bad boys:
@@ -138,14 +137,15 @@ const Main = () => {
             {/*@ts-ignore*/}
             <audio ref={audio} src={sound} loop />
             {!play ? (
-              <FlexWrapper>
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button buttonText="Play Audio" onClick={startAudio} />
-              </FlexWrapper>
+              </div>
             ) : (
               <AudioVisualizer
                 audio={audio}
                 amplitude={0.5}
                 onClick={playerHandler}
+                // style={{ height: 400 }}
               />
             )}
           </motion.div>

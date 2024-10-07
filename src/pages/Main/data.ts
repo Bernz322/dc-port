@@ -1,11 +1,10 @@
 import { AiFillApi } from "react-icons/ai";
 import { FaDiscord, FaSteam, FaTwitch } from "react-icons/fa";
-import { FiInstagram } from "react-icons/fi";
+import { TbBrandReactNative } from "react-icons/tb";
 import {
   SiTypescript,
   SiReact,
   SiRedux,
-  SiStyledcomponents,
   SiNodedotjs,
   SiMongodb,
   SiMysql,
@@ -19,6 +18,14 @@ import {
   SiSonarqube,
   SiNginx,
   SiLoopback,
+  SiDocker,
+  SiFlutter,
+  SiDart,
+  SiSwagger,
+  SiNextdotjs,
+  SiPostgresql,
+  SiRedis,
+  SiKubernetes,
 } from "react-icons/si";
 
 export const techs = [
@@ -28,19 +35,24 @@ export const techs = [
     Icon: SiTypescript,
   },
   {
+    id: "dart",
+    name: "Dart",
+    Icon: SiDart,
+  },
+  {
     id: "react",
     name: "React.js",
     Icon: SiReact,
   },
   {
+    id: "next",
+    name: "Next.js",
+    Icon: SiNextdotjs,
+  },
+  {
     id: "redux",
     name: "Redux",
     Icon: SiRedux,
-  },
-  {
-    id: "styled-components",
-    name: "Styled-Components",
-    Icon: SiStyledcomponents,
   },
   {
     id: "tailwindcss",
@@ -83,6 +95,16 @@ export const techs = [
     Icon: SiMysql,
   },
   {
+    id: "postgresql",
+    name: "Postgresql",
+    Icon: SiPostgresql,
+  },
+  {
+    id: "redis",
+    name: "Redis",
+    Icon: SiRedis,
+  },
+  {
     id: "nginx",
     name: "Nginx",
     Icon: SiNginx,
@@ -93,24 +115,39 @@ export const techs = [
     Icon: SiJest,
   },
   {
-    id: "testing-library",
-    name: "Testing Library",
-    Icon: SiTestinglibrary,
-  },
-  {
-    id: "sonarqube",
-    name: "SonarQube",
-    Icon: SiSonarqube,
-  },
-  {
     id: "restapi",
     name: "RESTful API",
     Icon: AiFillApi,
   },
   {
+    id: "swagger",
+    name: "Swagger",
+    Icon: SiSwagger,
+  },
+  {
     id: "git",
     name: "Git",
     Icon: SiGit,
+  },
+  {
+    id: "docker",
+    name: "Docker",
+    Icon: SiDocker,
+  },
+  {
+    id: "kubernetes",
+    name: "Kubernetes",
+    Icon: SiKubernetes,
+  },
+  {
+    id: "flutter",
+    name: "Flutter",
+    Icon: SiFlutter,
+  },
+  {
+    id: "native",
+    name: "React Native",
+    Icon: TbBrandReactNative,
   },
 ];
 
