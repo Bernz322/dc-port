@@ -40,7 +40,7 @@ const App = () => {
               <>
                 <Navbar />
                 <Routing />
-                <Footer />
+                {/* <Footer /> */}
               </>
             )}
           </AnimatePresence>

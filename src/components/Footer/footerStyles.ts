@@ -11,8 +11,8 @@ const StyledFooter = styled(motion.footer)`
   font-size: var(--fz-xxs);
   font-family: var(--font-mono);
   color: ${(props) => props.theme.color3};
-  padding: 20px 0 10px;
-  margin-top: 15px;
+  padding: 25px 0 0;
+  margin-top: 30px;
 
   .footer-msg {
     color: ${(props) => props.theme.color3};

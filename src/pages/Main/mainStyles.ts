@@ -104,7 +104,7 @@ const StyledMain = styled(motion.section)`
       }
     }
     .visualizer {
-      max-height: 75px !important;
+      max-height: 30px !important;
       width: 500px !important;
       canvas {
         max-height: 75px !important;
